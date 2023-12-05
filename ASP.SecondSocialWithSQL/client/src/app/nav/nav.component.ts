@@ -19,9 +19,6 @@ ngOnInit() {
 login() {
 this.accountService.login(this.model).subscribe(response => {
   this.router.navigateByUrl('/members')
-}, error => {
-  console.warn(error);
-  this.toastr.error(error.error);
 })};
   logout(){
     this.accountService.logout();
