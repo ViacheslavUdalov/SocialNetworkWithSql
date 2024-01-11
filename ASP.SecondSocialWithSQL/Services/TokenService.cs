@@ -1,8 +1,7 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using System.Security.Cryptography;
 using System.Text;
-using ASP.SecondSocialWithSQL.Etities;
+using ASP.SecondSocialWithSQL.Entities;
 using ASP.SecondSocialWithSQL.Interfaces;
 using Microsoft.IdentityModel.Tokens;
 

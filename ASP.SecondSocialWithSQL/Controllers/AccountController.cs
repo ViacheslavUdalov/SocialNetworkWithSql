@@ -2,7 +2,7 @@ using System.Security.Cryptography;
 using System.Text;
 using ASP.SecondSocialWithSQL.Data;
 using ASP.SecondSocialWithSQL.DTOS;
-using ASP.SecondSocialWithSQL.Etities;
+using ASP.SecondSocialWithSQL.Entities;
 using ASP.SecondSocialWithSQL.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

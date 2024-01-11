@@ -1,4 +1,4 @@
-using ASP.SecondSocialWithSQL.Etities;
+using ASP.SecondSocialWithSQL.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace ASP.SecondSocialWithSQL.Data;

@@ -1,4 +1,4 @@
-using ASP.SecondSocialWithSQL.Etities;
+using ASP.SecondSocialWithSQL.Entities;
 
 namespace ASP.SecondSocialWithSQL.Interfaces;
 

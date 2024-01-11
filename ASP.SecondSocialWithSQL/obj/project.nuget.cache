@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "RDNXsgU6nqrsrT+uLpPqeq2JTiPPopF38+WuEl7i59c2P4q2+2bLDoK2P/lqqQkJyED5YMgU/MiipDY5I4ua/A==",
+  "dgSpecHash": "qQdI5i2DiDN7I9Gs+Up1EDsxbk0KqUe2kZ4xWGK4YkMbcVLmc5+/vm+H957Vv5+4pxyUTxUfQAVyRgMk318phQ==",
   "success": true,
   "projectFilePath": "C:\\HardWorkingOnC\\ASP.SecondSocialWithSQL\\ASP.SecondSocialWithSQL\\ASP.SecondSocialWithSQL.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\slava\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\slava\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\slava\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\slava\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.14\\microsoft.aspnetcore.authentication.jwtbearer.7.0.14.nupkg.sha512",
     "C:\\Users\\slava\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.5\\microsoft.aspnetcore.openapi.7.0.5.nupkg.sha512",
+    "C:\\Users\\slava\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\slava\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.14\\microsoft.data.sqlite.core.7.0.14.nupkg.sha512",
     "C:\\Users\\slava\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.14\\microsoft.entityframeworkcore.7.0.14.nupkg.sha512",
     "C:\\Users\\slava\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.14\\microsoft.entityframeworkcore.abstractions.7.0.14.nupkg.sha512",
