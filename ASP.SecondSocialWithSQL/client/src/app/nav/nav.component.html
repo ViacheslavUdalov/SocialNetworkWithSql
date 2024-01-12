@@ -18,9 +18,9 @@
         </li>
       </ul>
     <div class="dropdown" *ngIf="accountService.currentUser$ | async as user" dropdown>
-      <a class="dropdown-toggle text-light" dropdownToggle>Welcome {{(accountService.currentUser$ | async)?.username | titlecase}}</a>
+      <a class="dropdown-toggle text-light" dropdownToggle>Welcome {{(accountService.currentUser$ | async)?.userName | titlecase}}</a>
       <div class="dropdown-menu mt-3" *dropdownMenu>
-        <a href="" class="dropdown-item">EditProfile</a>
+        <a routerLink="/member/edit" class="dropdown-item">EditProfile</a>
         <div class="dropdown-divider"></div>
         <a href="" class="dropdown-item" (click)="logout()">Logout</a>
       </div>
