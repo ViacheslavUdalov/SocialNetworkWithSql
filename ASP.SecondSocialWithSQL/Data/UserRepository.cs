@@ -1,5 +1,6 @@
 using ASP.SecondSocialWithSQL.DTOS;
 using ASP.SecondSocialWithSQL.Entities;
+using ASP.SecondSocialWithSQL.Helpers;
 using ASP.SecondSocialWithSQL.Interfaces;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
@@ -47,10 +48,35 @@ public class UserRepository : IUserRepository
             .SingleOrDefaultAsync(x => x.UserName == username);
     }
 
-    public async Task<IEnumerable<MemberDto>> GetMembersAsync()
+    public async Task<PageList<MemberDto>> GetMembersAsync(UserParams userParams)
     {
-        return await _dataContext.Users.ProjectTo<MemberDto>(_mapper.ConfigurationProvider)
-            .ToListAsync();
+        //AsQueryable() - это метод, который преобразует коллекцию в IQueryable.
+        //IQueryable представляет собой интерфейс для выполнения запросов к данным,
+        //который позволяет оптимизировать запросы к источнику данных.
+        var query = _dataContext.Users.AsQueryable();
+          
+       query = query.Where(u => u.UserName != userParams.CurrentUsername);
+       query = query.Where(u => u.Gender == userParams.Gender);
+
+       var minDob = DateTime.Today.AddYears(-userParams.MaxAge - 1);
+       var maxDob = DateTime.Today.AddYears(-userParams.MinAge);
+       
+       query = query.Where(u => u.DateOfBirth >= minDob && u.DateOfBirth <= maxDob);
+
+       query = userParams.OrderBy switch
+       {
+           "created" => query.OrderByDescending(u => u.Created),
+           _ => query.OrderByDescending(u => u.LastActive)
+       };
+       
+       return await PageList<MemberDto>
+           //ProjectTo() является частью библиотеки AutoMapper и используется для проекции объектов на другой тип.
+           //Метод AsNoTracking() позволяет отключить отслеживание изменений для
+           //определенного запроса. Это означает, что Entity Framework не
+           //будет отслеживать изменения, которые вы вносите в объекты, полученные из этого запроса.
+           //Это может улучшить производительность и уменьшить использование памяти
+           .CreateAsync(query.ProjectTo<MemberDto>(_mapper.ConfigurationProvider).AsNoTracking(),
+           userParams.PageNumber, userParams.PageSize);
     }
 
     public async Task<MemberDto> GetMemberAsync(string username)

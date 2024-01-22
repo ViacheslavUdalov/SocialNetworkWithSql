@@ -104,6 +104,21 @@ namespace ASP.SecondSocialWithSQL.Data.Migrations
                     b.ToTable("Photos");
                 });
 
+            modelBuilder.Entity("ASP.SecondSocialWithSQL.Entities.UserLike", b =>
+                {
+                    b.Property<int>("SourceUserId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("LikedUserId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("SourceUserId", "LikedUserId");
+
+                    b.HasIndex("LikedUserId");
+
+                    b.ToTable("Likes");
+                });
+
             modelBuilder.Entity("ASP.SecondSocialWithSQL.Entities.Photo", b =>
                 {
                     b.HasOne("ASP.SecondSocialWithSQL.Entities.AppUser", "AppUser")
@@ -115,8 +130,31 @@ namespace ASP.SecondSocialWithSQL.Data.Migrations
                     b.Navigation("AppUser");
                 });
 
+            modelBuilder.Entity("ASP.SecondSocialWithSQL.Entities.UserLike", b =>
+                {
+                    b.HasOne("ASP.SecondSocialWithSQL.Entities.AppUser", "LikedUser")
+                        .WithMany("LikedByUsers")
+                        .HasForeignKey("LikedUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ASP.SecondSocialWithSQL.Entities.AppUser", "SourceUser")
+                        .WithMany("LikedUsers")
+                        .HasForeignKey("SourceUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("LikedUser");
+
+                    b.Navigation("SourceUser");
+                });
+
             modelBuilder.Entity("ASP.SecondSocialWithSQL.Entities.AppUser", b =>
                 {
+                    b.Navigation("LikedByUsers");
+
+                    b.Navigation("LikedUsers");
+
                     b.Navigation("Photos");
                 });
 #pragma warning restore 612, 618

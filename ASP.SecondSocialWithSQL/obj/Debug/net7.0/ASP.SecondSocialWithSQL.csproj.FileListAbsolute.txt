@@ -159,3 +159,5 @@ C:\HardWorkingOnC\ASP.SecondSocialWithSQL\ASP.SecondSocialWithSQL\bin\Debug\net7
 C:\HardWorkingOnC\ASP.SecondSocialWithSQL\ASP.SecondSocialWithSQL\bin\Debug\net7.0\Data\UserSeedData.json
 C:\HardWorkingOnC\ASP.SecondSocialWithSQL\ASP.SecondSocialWithSQL\bin\Debug\net7.0\AutoMapper.dll
 C:\HardWorkingOnC\ASP.SecondSocialWithSQL\ASP.SecondSocialWithSQL\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\HardWorkingOnC\ASP.SecondSocialWithSQL\ASP.SecondSocialWithSQL\bin\Debug\net7.0\CloudinaryDotNet.dll
+C:\HardWorkingOnC\ASP.SecondSocialWithSQL\ASP.SecondSocialWithSQL\bin\Debug\net7.0\Newtonsoft.Json.dll
