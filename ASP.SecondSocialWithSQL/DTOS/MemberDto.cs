@@ -1,4 +1,7 @@
 
+using System;
+using System.Collections.Generic;
+
 namespace ASP.SecondSocialWithSQL.DTOS;
 
 public class MemberDto

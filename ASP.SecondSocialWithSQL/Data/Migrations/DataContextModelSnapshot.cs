@@ -77,6 +77,51 @@ namespace ASP.SecondSocialWithSQL.Data.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("ASP.SecondSocialWithSQL.Entities.Message", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("DateRead")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("MessageSend")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("RecipientDeleted")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("RecipientId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("RecipientUsername")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("SenderDeleted")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("SenderId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("SenderUsername")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RecipientId");
+
+                    b.HasIndex("SenderId");
+
+                    b.ToTable("Messages");
+                });
+
             modelBuilder.Entity("ASP.SecondSocialWithSQL.Entities.Photo", b =>
                 {
                     b.Property<int>("Id")
@@ -119,6 +164,25 @@ namespace ASP.SecondSocialWithSQL.Data.Migrations
                     b.ToTable("Likes");
                 });
 
+            modelBuilder.Entity("ASP.SecondSocialWithSQL.Entities.Message", b =>
+                {
+                    b.HasOne("ASP.SecondSocialWithSQL.Entities.AppUser", "Recipient")
+                        .WithMany("MessagesRecived")
+                        .HasForeignKey("RecipientId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("ASP.SecondSocialWithSQL.Entities.AppUser", "Sender")
+                        .WithMany("MessagesSend")
+                        .HasForeignKey("SenderId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Recipient");
+
+                    b.Navigation("Sender");
+                });
+
             modelBuilder.Entity("ASP.SecondSocialWithSQL.Entities.Photo", b =>
                 {
                     b.HasOne("ASP.SecondSocialWithSQL.Entities.AppUser", "AppUser")
@@ -154,6 +218,10 @@ namespace ASP.SecondSocialWithSQL.Data.Migrations
                     b.Navigation("LikedByUsers");
 
                     b.Navigation("LikedUsers");
+
+                    b.Navigation("MessagesRecived");
+
+                    b.Navigation("MessagesSend");
 
                     b.Navigation("Photos");
                 });

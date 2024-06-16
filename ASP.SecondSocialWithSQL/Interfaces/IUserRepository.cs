@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using ASP.SecondSocialWithSQL.DTOS;
 using ASP.SecondSocialWithSQL.Entities;
 using ASP.SecondSocialWithSQL.Helpers;

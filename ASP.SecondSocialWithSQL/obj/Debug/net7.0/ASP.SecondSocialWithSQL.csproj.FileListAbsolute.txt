@@ -142,7 +142,6 @@ C:\HardWorkingOnC\ASP.SecondSocialWithSQL\ASP.SecondSocialWithSQL\obj\Debug\net7
 C:\HardWorkingOnC\ASP.SecondSocialWithSQL\ASP.SecondSocialWithSQL\obj\Debug\net7.0\staticwebassets.build.json
 C:\HardWorkingOnC\ASP.SecondSocialWithSQL\ASP.SecondSocialWithSQL\obj\Debug\net7.0\staticwebassets.development.json
 C:\HardWorkingOnC\ASP.SecondSocialWithSQL\ASP.SecondSocialWithSQL\obj\Debug\net7.0\scopedcss\bundle\ASP.SecondSocialWithSQL.styles.css
-C:\HardWorkingOnC\ASP.SecondSocialWithSQL\ASP.SecondSocialWithSQL\obj\Debug\net7.0\ASP.SecondSocialWithSQL.csproj.CopyComplete
 C:\HardWorkingOnC\ASP.SecondSocialWithSQL\ASP.SecondSocialWithSQL\obj\Debug\net7.0\ASP.SecondSocialWithSQL.dll
 C:\HardWorkingOnC\ASP.SecondSocialWithSQL\ASP.SecondSocialWithSQL\obj\Debug\net7.0\refint\ASP.SecondSocialWithSQL.dll
 C:\HardWorkingOnC\ASP.SecondSocialWithSQL\ASP.SecondSocialWithSQL\obj\Debug\net7.0\ASP.SecondSocialWithSQL.pdb
@@ -161,3 +160,5 @@ C:\HardWorkingOnC\ASP.SecondSocialWithSQL\ASP.SecondSocialWithSQL\bin\Debug\net7
 C:\HardWorkingOnC\ASP.SecondSocialWithSQL\ASP.SecondSocialWithSQL\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\HardWorkingOnC\ASP.SecondSocialWithSQL\ASP.SecondSocialWithSQL\bin\Debug\net7.0\CloudinaryDotNet.dll
 C:\HardWorkingOnC\ASP.SecondSocialWithSQL\ASP.SecondSocialWithSQL\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\HardWorkingOnC\ASP.SecondSocialWithSQL\ASP.SecondSocialWithSQL\obj\Debug\net7.0\ASP.SecondSocialWithSQL.sourcelink.json
+C:\HardWorkingOnC\ASP.SecondSocialWithSQL\ASP.SecondSocialWithSQL\obj\Debug\net7.0\ASP.Seco.96B28F11.Up2Date

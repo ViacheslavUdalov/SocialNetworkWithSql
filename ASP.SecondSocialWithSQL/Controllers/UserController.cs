@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using ASP.SecondSocialWithSQL.DTOS;
 using ASP.SecondSocialWithSQL.Entities;
 using ASP.SecondSocialWithSQL.Extenstions;
@@ -5,6 +7,7 @@ using ASP.SecondSocialWithSQL.Helpers;
 using ASP.SecondSocialWithSQL.Interfaces;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ASP.SecondSocialWithSQL.Controllers;
