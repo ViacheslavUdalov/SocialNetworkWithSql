@@ -1,5 +1,3 @@
-using System;
-using System.Threading.Tasks;
 using ASP.SecondSocialWithSQL.Extenstions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.SignalR;
@@ -18,21 +16,28 @@ public class PresenceHub : Hub
 
     public override async Task OnConnectedAsync()
     {
-        await _presenceTracker.UserConnected(Context.User.GetUsername(), Context.ConnectionId);
-        await Clients.Others.SendAsync("UserIsOnline", Context.User.GetUsername());
-        
+      var  isOnline = await _presenceTracker.UsersConnected(Context.User.GetUsername(), Context.ConnectionId);
+      if (isOnline)
+      {
+          await Clients.Others.SendAsync("UserIsOnline", Context.User.GetUsername());
+      }
+       
+
         var currentUsers = await _presenceTracker.GetOnlineUsers();
-        await Clients.All.SendAsync("GetOnlineUsers", currentUsers);
+        await Clients.Caller.SendAsync("GetOnlineUsers", currentUsers);
     }
-    
-    
+
     public override async Task OnDisconnectedAsync(Exception exception)
     {
-        await _presenceTracker.UserDisconnected(Context.User.GetUsername(), Context.ConnectionId);
-        await Clients.Others.SendAsync("UserIsOffline", Context.User.GetUsername());
+        var  isOffline = await _presenceTracker.UsersDisconnected(Context.User.GetUsername(), Context.ConnectionId);
+        if (isOffline)
+        {
+            await Clients.Others.SendAsync("UserIsOffline", Context.User.GetUsername());
+        }
+       
         
-        var currentUsers = await _presenceTracker.GetOnlineUsers();
-        await Clients.All.SendAsync("GetOnlineUsers", currentUsers);
+        // var currentUsers = await _presenceTracker.GetOnlineUsers();
+        // await Clients.All.SendAsync("GetOnlineUsers", currentUsers);
         
         await base.OnDisconnectedAsync(exception);
     }

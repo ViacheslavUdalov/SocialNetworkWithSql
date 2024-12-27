@@ -10,6 +10,7 @@
         <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
         <PackageReference Include="CloudinaryDotNet" Version="1.25.0" />
         <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.14" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.20" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.5" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.14">
           <PrivateAssets>all</PrivateAssets>
@@ -21,7 +22,10 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="client\src\app\admin\" />
       <Folder Include="client\src\app\errors\" />
+      <Folder Include="client\src\app\modals\" />
+      <Folder Include="client\src\app\_directives\" />
       <Folder Include="client\src\app\_forms\" />
       <Folder Include="client\src\app\_guards\" />
       <Folder Include="client\ssl\" />

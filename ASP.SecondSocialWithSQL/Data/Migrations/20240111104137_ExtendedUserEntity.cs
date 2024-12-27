@@ -15,14 +15,14 @@ namespace ASP.SecondSocialWithSQL.Data.Migrations
                 name: "City",
                 table: "Users",
                 type: "TEXT",
-                nullable: false,
+                nullable: true,
                 defaultValue: "");
 
             migrationBuilder.AddColumn<string>(
                 name: "Country",
                 table: "Users",
                 type: "TEXT",
-                nullable: false,
+                nullable: true,
                 defaultValue: "");
 
             migrationBuilder.AddColumn<DateTime>(
@@ -43,7 +43,7 @@ namespace ASP.SecondSocialWithSQL.Data.Migrations
                 name: "Gender",
                 table: "Users",
                 type: "TEXT",
-                nullable: false,
+                nullable: true,
                 defaultValue: "");
 
             migrationBuilder.AddColumn<string>(

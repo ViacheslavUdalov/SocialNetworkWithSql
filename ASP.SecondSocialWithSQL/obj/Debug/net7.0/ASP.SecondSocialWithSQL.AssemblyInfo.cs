@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ASP.SecondSocialWithSQL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9b5f625c8ec48c05a1d8f3051642f0cc72abb4c9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cce29bc7fc414b3ae35cc86d6a969ee30fd033a3")]
 [assembly: System.Reflection.AssemblyProductAttribute("ASP.SecondSocialWithSQL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ASP.SecondSocialWithSQL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

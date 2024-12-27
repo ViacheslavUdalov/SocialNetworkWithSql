@@ -3,10 +3,6 @@ using ASP.SecondSocialWithSQL.Data;
 using ASP.SecondSocialWithSQL.Extenstions;
 using ASP.SecondSocialWithSQL.Middleware;
 using ASP.SecondSocialWithSQL.SignalR;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 
 
 namespace API
@@ -48,6 +44,7 @@ namespace API
             {
                 endpoints.MapControllers();
                 endpoints.MapHub<PresenceHub>("hubs/presence");
+                endpoints.MapHub<MessageHub>("hubs/message");
             });
         }
     }

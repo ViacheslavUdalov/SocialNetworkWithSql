@@ -1,8 +1,11 @@
 <div class="card">
   <div class="card-body">
-    <div *ngIf="messages?.length === 0">Нет Сообщений</div>
-  <ul *ngIf="messages?.length > 0" class="chat">
-    <li *ngFor="let message of messages">
+    <div *ngIf="(messageService.messageThread$ | async)?.length === 0">Нет Сообщений</div>
+  <ul #scrollMe
+      style="overflow: scroll; height: 500px"
+      [scrollTop]="scrollMe.scrollHeight"
+    *ngIf="(messageService.messageThread$ | async).length > 0" class="chat">
+    <li *ngFor="let message of (messageService.messageThread$ | async)">
       <div>
         <span class="chat-img float-right">
           <img src="{{message.senderPhotoUrl || './assets/user.png'}}" style="width: 50px" class="rounded-circle" alt="{{message.senderUsername}}">
@@ -22,11 +25,11 @@
   </ul>
   </div>
   <div class="card-footer">
-    <form>
+    <form #messageForm="ngForm" (ngSubmit)="sendMessage()" autocomplete="off">
       <div class="input-group">
-        <input type="text" class="form-control input-sm" placeholder="Отправить сообщение">
+        <input name="messageContent" required [(ngModel)]="messageContent" type="text" class="form-control input-sm" placeholder="Отправить сообщение">
         <div class="input-group-append">
-          <button class="btn btn-primary" type="submit">Отправить</button>
+          <button [disabled]="!messageForm.valid" class="btn btn-primary" type="submit">Отправить</button>
         </div>
       </div>
     </form>

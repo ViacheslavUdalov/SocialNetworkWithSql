@@ -30,6 +30,13 @@ import {BsDatepickerModule} from "ngx-bootstrap/datepicker";
 import {PaginationModule} from "ngx-bootstrap/pagination";
 import {ButtonsModule} from "ngx-bootstrap/buttons";
 import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
+import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
+import { HasRoleDirective } from './_directives/has-role.directive';
+import { UserManagementComponent } from './admin/user-management/user-management.component';
+import { PhotoManagementComponent } from './admin/photo-management/photo-management.component';
+import { RolesModalComponent } from './modals/roles-modal/roles-modal.component';
+import {ModalModule} from "ngx-bootstrap/modal";
+import { ConfirmDialogComponent } from './modals/confirm-dialog/confirm-dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +55,13 @@ import { MemberMessagesComponent } from './members/member-messages/member-messag
     PhotoEditorComponent,
     TextInputComponent,
     DateInputComponent,
-    MemberMessagesComponent
+    MemberMessagesComponent,
+    AdminPanelComponent,
+    HasRoleDirective,
+    UserManagementComponent,
+    PhotoManagementComponent,
+    RolesModalComponent,
+    ConfirmDialogComponent
 
   ],
     imports: [
@@ -63,7 +76,8 @@ import { MemberMessagesComponent } from './members/member-messages/member-messag
         FileUploadModule,
         BsDatepickerModule,
         PaginationModule,
-        ButtonsModule
+        ButtonsModule,
+        ModalModule.forRoot()
     ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},

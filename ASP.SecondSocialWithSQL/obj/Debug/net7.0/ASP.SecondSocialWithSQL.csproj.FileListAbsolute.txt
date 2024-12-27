@@ -162,3 +162,9 @@ C:\HardWorkingOnC\ASP.SecondSocialWithSQL\ASP.SecondSocialWithSQL\bin\Debug\net7
 C:\HardWorkingOnC\ASP.SecondSocialWithSQL\ASP.SecondSocialWithSQL\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\HardWorkingOnC\ASP.SecondSocialWithSQL\ASP.SecondSocialWithSQL\obj\Debug\net7.0\ASP.SecondSocialWithSQL.sourcelink.json
 C:\HardWorkingOnC\ASP.SecondSocialWithSQL\ASP.SecondSocialWithSQL\obj\Debug\net7.0\ASP.Seco.96B28F11.Up2Date
+C:\HardWorkingOnC\ASP.SecondSocialWithSQL\ASP.SecondSocialWithSQL\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\HardWorkingOnC\ASP.SecondSocialWithSQL\ASP.SecondSocialWithSQL\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\HardWorkingOnC\ASP.SecondSocialWithSQL\ASP.SecondSocialWithSQL\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\HardWorkingOnC\ASP.SecondSocialWithSQL\ASP.SecondSocialWithSQL\bin\Debug\net7.0\Microsoft.Extensions.Identity.Core.dll
+C:\HardWorkingOnC\ASP.SecondSocialWithSQL\ASP.SecondSocialWithSQL\bin\Debug\net7.0\Microsoft.Extensions.Identity.Stores.dll
+C:\HardWorkingOnC\ASP.SecondSocialWithSQL\ASP.SecondSocialWithSQL\bin\Debug\net7.0\Microsoft.Extensions.Options.dll

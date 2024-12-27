@@ -1,3 +1,5 @@
+using Newtonsoft.Json;
+
 namespace ASP.SecondSocialWithSQL.DTOS;
 
 public class MessageDto
@@ -12,4 +14,8 @@ public class MessageDto
     public string Content { get; set; }
     public DateTime? DateRead { get; set; }
     public DateTime MessageSend { get; set; }
+    [JsonIgnore]
+    public bool SenderDeleted { get; set; }
+    [JsonIgnore]
+    public bool RecipientDeleted { get; set; }
 }

@@ -6,14 +6,11 @@ namespace ASP.SecondSocialWithSQL.SignalR;
 
 public class PresenceTracker
 {
-    private static readonly Dictionary<string, List<string>> OnlineUsers = new Dictionary<string, List<string>>();
+    private static Dictionary<string, List<string>> OnlineUsers = new Dictionary<string, List<string>>();
 
-    public Task UserConnected(string username, string connectionId)
+    public Task<bool> UsersConnected(string username, string connectionId)
     {
-        // Использование lock позволяет предотвратить конфликты доступа к этой коллекции, блокируя доступ
-        // к ней для других потоков во время выполнения операций добавления или обновления данных.
-        //Предполагается, что этот класс используется в контексте многопоточной среды
-        //где могут одновременно выполняться запросы от разных пользователей
+        bool isOnline = false;
         lock (OnlineUsers)
         {
             if (OnlineUsers.ContainsKey(username))
@@ -22,24 +19,30 @@ public class PresenceTracker
             }
             else
             {
-                OnlineUsers.Add(username, new List<string>{connectionId});
+                OnlineUsers.Add(username, new List<string> { connectionId });
+                isOnline = true;
             }
+
+            
         }
-        return Task.CompletedTask;
+        return Task.FromResult(isOnline);
     }
 
-    public Task UserDisconnected(string username, string connectionId)
+    public Task<bool> UsersDisconnected(string username, string connectionId)
     {
+        bool isOffline = false;
         lock (OnlineUsers)
         {
-            if (!OnlineUsers.ContainsKey(username)) return Task.CompletedTask;
+            if (!OnlineUsers.ContainsKey(username)) return Task.FromResult(isOffline);
             OnlineUsers[username].Remove(connectionId);
-            if (OnlineUsers[username].Count() == 0)
+            if (OnlineUsers[username].Count == 0)
             {
                 OnlineUsers.Remove(username);
+                isOffline = true;
             }
         }
-        return Task.CompletedTask;
+
+        return Task.FromResult(isOffline);
     }
 
     public Task<string[]> GetOnlineUsers()
@@ -51,5 +54,22 @@ public class PresenceTracker
         }
 
         return Task.FromResult(onlineUsers);
+    }
+
+    public Task<List<string>> GetConnectionsForUser(string username)
+    {
+        List<string> connectionIds;
+        // В данном случае lock (OnlineUsers) устанавливает блокировку на объект OnlineUsers.
+        // Это значит, что пока один поток выполняет код внутри этого блока, никакой другой поток
+        // не может войти в этот блок с тем же объектом блокировки (OnlineUsers)
+        lock (OnlineUsers)
+        {
+            connectionIds = OnlineUsers.GetValueOrDefault(username);
+        }
+
+// Task.FromResult(connectionIds) создает завершенный Task, который возвращает значение connectionIds.
+// Это используется для того, чтобы вернуть значение в асинхронном методе без
+// необходимости фактического выполнения асинхронной операции.
+        return Task.FromResult(connectionIds);
     }
 }

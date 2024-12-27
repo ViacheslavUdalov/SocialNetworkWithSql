@@ -22,10 +22,10 @@ public class LogUserActivity : IAsyncActionFilter
 
         var userId = resultContext.HttpContext.User.GetUserId();
         // получение репозитория из сервисов приложения.
-        var repo = resultContext.HttpContext.RequestServices.GetService<IUserRepository>();
-        var user = await repo.GetUserByIdAsync(userId);
-        user.LastActive = DateTime.Now;
-        await repo.SaveAllAsync();
+        var repo = resultContext.HttpContext.RequestServices.GetService<IUnitOfWork>();
+        var user = await repo._userRepository.GetUserByIdAsync(userId);
+        user.LastActive = DateTime.UtcNow;
+        await repo.Complete();
 
     }
 }
